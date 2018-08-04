@@ -14,22 +14,9 @@ var mongo = require('mongodb');
 var mongoose = require('mongoose');
 
 
-
-// Using `mongoose.connect`...
-var promise = mongoose.connect('mongodb://localhost/10_eLearning_system', {
-  useMongoClient: true,
-  /* other options */
-});
-// Or `createConnection`
-var promise = mongoose.createConnection('mongodb://localhost/10_eLearning_system', {
-  useMongoClient: true,
-  /* other options */
-});
-promise.then(function(db) {
-  /* Use `db`, for instance `db.model()`
-});
-// Or, if you already have a connection
-connection.openUri('mongodb://localhost/myapp', { /* options */ });
+mongoose.connect("mongodb://navneet:1234@tanujgarg-shard-00-00-cjfw4.mongodb.net:27017,tanujgarg-shard-00-01-cjfw4.mongodb.net:27017,tanujgarg-shard-00-02-cjfw4.mongodb.net:27017/test?ssl=true&replicaSet=tanujgarg-shard-0&authSource=admin&retryWrites=true")
+  .then(() => console.log("Database connected to cluster"))
+  .catch(error => console.log(error));
 
 async = require('async');
 
